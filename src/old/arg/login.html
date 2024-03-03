@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title> PaintNook Login</title>
+        <link rel="stylesheet" href="login.css">
+    </head>
+
+    <body>
+        <div id="app" v-cloak>
+            <div class="container">
+                <div class="login">
+                    <login-form class="login-form"></login-form>
+                    <button class="forgot" @click="isVisible=true">forgot login</button>
+                    <div v-if="isVisible">
+                        <hr>
+                        <security-form></security-form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script>
+            let app = Vue.createApp({
+                data(){
+                    return{
+                        isVisible: false
+                    }
+                },
+            }) 
+
+            // to create a new component 
+            app.component('login-form',{
+                // template defines the HTML template and specifies the components visual representation. basically better this way
+                // .prevent means prevent default
+                // v-bind works with NON-INPUT to create two way binding between html element and variable (this case itslabel)
+                // : is shortcut for v-bind
+                template:`
+                    <form @submit.prevent="handleLogin">
+                        <h1>{{title}}</h1>
+                        <label>
+                            Email
+                            <input type="text" v-bind:itslabel="emailLabel"/>
+                        </label>
+                        
+                        <label>
+                            Password
+                            <input type="text" :itslabel="passwordLabel"/>
+                        </label>
+                        <p class="message">{{message}}</p>
+                        <button>log in</button>
+                    </form> 
+                `,
+                // this registers custom-componet to make login-form aware of this
+                data(){
+                    return {
+                        title: 'Welcome To PaintNook',
+                        email: '',
+                        password: '',
+                        emailLabel: 'Email',
+                        passwordLabel: 'Password',
+                        message: ''
+                    }
+                },
+                methods:{
+                    handleLogin(){
+                        this.message='Incorrect Information Entered';
+                    }
+                }
+            })
+
+            app.component('security-form',{
+                template:`
+                    <form @submit.prevent="handleSubmit">
+                        <label>
+                            Security Question: What is my favourite cake?
+                            <input type="text" v-model="securityQuestion" />
+                            <p class="message">{{message}}</p>
+                        </label>
+                        <button>submit</button>
+                    </form>
+                `,
+                data(){
+                    return {
+                        title: 'Login Form',
+                        securityQuestion: '',
+                        securityAnswer: 'c',
+                        message: ''
+                    }
+                },
+                methods:{
+                    handleSubmit(){
+                        if (this.securityQuestion==this.securityAnswer){
+                            window.location.href = '/paintnook.html';
+                        }else{
+                            this.message='Incorrect Information Entered';
+                        }
+                    }
+                }
+            })            
+            app.mount('#app') 
+        </script>
+
+    </body>
+</html>
+

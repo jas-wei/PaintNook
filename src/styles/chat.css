@@ -1,0 +1,162 @@
+html{
+    scroll-behavior: smooth;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    /* font-family: sans-serif;  */
+    box-sizing: border-box;
+    font-weight:normal;
+}
+
+body{
+    background-color: blanchedalmond;
+}
+
+
+.navigation-bar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color:darkred;
+    width: 100%;
+    z-index: 100;
+    padding: 10px;
+}
+
+nav{
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 30px;
+}
+
+.logo2{
+    color: white;
+    font-size: 30px;
+}
+
+nav ul li{ /*to specify that we apply the following code to the li in ul in nav*/
+    display: inline-block;
+    list-style: none;
+    margin: 10px 30px;
+}
+
+nav ul li a{
+    color: white;
+    text-decoration: none; /*gets rid of underline*/
+    font-size: 18px;
+    position: relative;
+}
+
+.friend-flex{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: wheat;
+    height: 100vh;
+    position:fixed;
+    z-index: 1;
+}
+
+.profile-pic{
+    background-color: gray;
+    width: 75px;
+    height: 75px;
+    margin-top: 20px;
+
+    border-radius: 100px;
+    border-style: solid;
+    border-color: darkred;
+}
+
+h2{
+    font-size: 16px;
+    font-weight: 600;
+    text-align: left;
+}
+
+.friend-flex button{
+    margin-top: 20px;
+    width: 75px;
+    height: 75px;
+    border-radius: 100px;
+
+    font-size: 40px;
+    background-color: darkred;
+    color: white;
+    border-style: none;
+}
+
+.seperation2{
+    display: flex;
+    flex-direction: column;
+}
+
+.message-flex{
+    margin-left: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+}
+
+.dm-flex{
+    margin-top: 90px;
+    margin-bottom: 110px;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    gap: 40px;
+    flex: 1;
+}
+
+.dm h2{
+    font-size: 16px;
+}
+
+.dm{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.dm p{
+    width: 700px;
+    text-align: left;
+}
+
+.input{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background-color:blanchedalmond;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+}
+
+.dm-input{
+    height: 30px;
+    width: 400px;
+    padding: 10px;
+    margin-left: 300px;
+    border-radius: 20px;
+}
+
+.input button{
+    height: 30px;
+    position: relative;
+    border-radius: 100px;
+    margin-left: 20px;
+    padding: 10px;
+}
+
+

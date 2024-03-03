@@ -1,0 +1,44 @@
+input {
+    margin: 10px;
+    display: block;
+    outline: none;
+}
+
+[v-cloak]{ /* makes it so that html is not visible until browser is ready */
+    display: none;
+}
+
+.login{
+    border: 2px solid red;
+    background-color: rgb(255, 250, 237);
+    padding: 20px;
+    width: 500px;
+    position: absolute;
+    top: 30%;
+    right: 38%;
+}
+
+.message{
+    margin-left: 10px;
+    color: red;
+    font-size: 10px;
+}
+
+.input-label{
+    margin-top: 10px;
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 300px;
+}
+
+.form{
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+button{
+    margin: 10px;
+}

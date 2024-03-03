@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8"> <!--meta gives additional information to search engine and viewers. this charset allows us to use up to 256 different characters-->
+        <meta http-equiv="X-UA-Compatiblee" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--makes website look good on all devices-->
+        
+        <title> PaintNook</title>
+        
+        <link rel="stylesheet" href=".styles/paintnook.css">
+        <script src="https://kit.fontawesome.com/2f003e2b89.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <div id="app" v-cloak>
+            <div class="container">
+                <custom-header></custom-header>
+                <div class="seperation">
+                    <custom-ads></custom-ads>
+                    <custom-welcome></custom-welcome>
+                    <custom-ads></custom-ads>
+                    <featured-artists></featured-artists>
+                </div>         
+            </div>
+        </div>
+
+
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script>
+            // import account from './account.html'
+            let app = Vue.createApp({
+                data(){
+                    return{
+                        isVisited: false,
+                        username: 'yes',
+                    }
+                },
+                // created() {
+                //     // Store the username in localStorage
+                //     console.log(this.username);
+                //     localStorage.setItem('username', this.username);
+                // }
+            }) 
+
+            // to create a new component 
+            app.component('custom-header',{
+                
+                template:` 
+                    <div class="container">
+                        <div class="navigation-bar">
+                            <nav> 
+                                <p class="logo2"> P A I N T N O O K </p>
+                                <ul id="sidemenu"> 
+                                    <li><a href="paintnook.html"> Home </a></li> 
+                                    <li><a href="#"> Chat </a></li> 
+                                    <li><a href="#"> Account </a></li> 
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                `,
+                
+                // export default{
+                //     data(){
+                //         return{
+                //             username:''
+                //         }
+                //     }
+                // }
+            })
+
+            app.component('custom-ads',{
+                template:`
+
+                        <div class="ad-flex">
+                            <img class="img2" src="#">
+                            <img class="img1" src="images/clothing.png">
+                            <img class="img1" src="#" @click='doWebsite'>
+                        </div>
+
+                `,
+                data(){
+                    return {
+                    }
+                },
+                methods:{
+                    doWebsite(){
+                        window.open('/login.html');
+                    }
+                }
+            })    
+                    
+            app.component('custom-welcome',{
+                template:`
+                    <div class="main">
+                        <h2>Welcome to</h2>
+                        <h1>PAINTNOOK</h1>
+                        <video class="video" controls src="#"></video>
+                        <p>
+                            Hello and welcome to Paintnook, a community of young artists working
+                            together to improve their skills. Meet friends, complete daily challenges,
+                            and have fun in our safe and inclusive forums designed for kids! 
+                            Paintnook works just like a classroom, fostering the creative spirit 
+                            of the next generation of artists. And parents, don’t worry, activity on
+                            Paintnook is supervised at all times by our team of professionals. And
+                            the best part is it’s completely free! Sign up for Paintnook today!
+                        </p>
+                        
+                        <div class="featured">
+                        <h3>Featuring:</h3>
+                        <div class="artist-flex">
+                            <img src="#">
+                            <img src="#">
+                            <img src="#">
+                            <img src="#">
+                        </div>
+                    </div>
+                `
+            })
+
+            app.mount('#app') 
+        </script>
+
+    </body>
+</html>
+
