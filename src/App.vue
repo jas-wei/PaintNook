@@ -1,8 +1,7 @@
 <template>
   <div>
-    <PageHeader v-if="isAuthenticated && !isShowError" />
-    <LoginForm v-if="!isAuthenticated && !isShowError" /> <!-- Show LoginForm.vue when not logged in -->
-    <PageError v-if="isShowError" />
+    <PageHeader v-if="isAuthenticated"/>
+    <LoginForm v-if="!isAuthenticated"/> <!-- Show LoginForm.vue when not logged in -->
   </div>
 </template>
 
@@ -11,7 +10,6 @@ import axios from 'axios'; // Import axios if not already imported
 import { mapState } from 'vuex';
 import LoginForm from './components/LoginForm.vue'
 import PageHeader from './components/PageHeader.vue'
-import PageError from './components/PageError.vue'
 
 export default {
   name: 'App',
@@ -26,10 +24,9 @@ export default {
   components: {
     LoginForm,
     PageHeader,
-    PageError,
   },
   computed: {
-    ...mapState(['isAuthenticated', 'isShowError'])
+    ...mapState(['isAuthenticated',])
   },
   methods: {
     async loadErrorHtml() {

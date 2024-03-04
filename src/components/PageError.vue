@@ -9,7 +9,7 @@
             Technical Information:
         </p>
         <p> 
-            ***STOP:-..-...--- -.... --...
+            ***STOP:-..-. -.... --...
         </p>
     </div>
 </template>

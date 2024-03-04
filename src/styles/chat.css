@@ -59,7 +59,7 @@ nav ul li a{
     justify-content: center;
     background-color: wheat;
     height: 100vh;
-    position:fixed;
+    /* position:fixed; */
     z-index: 1;
 }
 
@@ -95,6 +95,11 @@ h2{
 .seperation2{
     display: flex;
     flex-direction: column;
+    background-image: url('@/assets/images/eyes3.gif');
+    background-size:contain;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: black;
 }
 
 .message-flex{
@@ -128,6 +133,7 @@ h2{
 .dm p{
     width: 700px;
     text-align: left;
+    
 }
 
 .input{

@@ -1,6 +1,6 @@
 <template>
-    <div class="welcome-container">
-        <div class="side-flex">
+    <div class="welcome-container" :style="containerStyle">
+        <div class="side-flex" :style="containerStyle">
             <div  class="challenge">
                 <h3>Daily Challenge</h3>
                 <h1>Dharman</h1>
@@ -15,10 +15,10 @@
                 <li>New carcinogen</li>
             </div>
         </div>
-        <div class="main">
+        <div class="main" :style="containerStyle">
             <h2>Welcome to</h2>
             <h1>PAINTNOOK</h1>
-            <video class='video' controls src='@/assets/images/arg_video_1.mp4'></video>
+            <video class='video' controls src='@/assets/images/final.mp4'></video>
             <p>
                 Hello and welcome to Paintnook, a community of young artists working
                 together to improve their skills. Meet friends, complete daily challenges,
@@ -43,7 +43,19 @@
 </template>
 
 <script>
-export default {
-  name: 'PageWelcome'
-};
+import { mapState } from 'vuex';
+
+    export default {
+    name: 'PageWelcome',
+        computed: {
+            ...mapState(['isShowError']),
+            containerStyle() {
+                return {
+                    // Define base styles for the welcome container
+                    display: this.isShowError ? 'initial' : 'flex',
+                    // Add more styles as needed
+                };
+            }
+        }
+    };
 </script>

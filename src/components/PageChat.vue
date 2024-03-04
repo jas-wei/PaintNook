@@ -4,11 +4,11 @@
         <h1>Friends</h1>
         <img class="profile-pic" src="#">
         <h2>miko_solangelo</h2>
-        <img class="profile-pic" src="#">
+        <img class="profile-pic" src="@/assets/images/cat.png">
         <h2>coriandrr</h2>
-        <img class="profile-pic" src="#">
+        <img class="profile-pic" src="@/assets/images/LotusBDay.png">
         <h2>Neopm</h2>
-        <img class="profile-pic" src="#">
+        <img class="profile-pic" src="@/assets/images/Tv.png">
         <h2>__summer_lite__</h2>
         <button>+</button>
     </div>
@@ -16,7 +16,7 @@
         <input class="dm-input" type="text"/>
         <button>Send</button>
     </div>
-    <div class="seperation2">
+    <div class="seperation2" :style="containerStyle">
         <div class="message-flex">
             <div class="dm-flex">
                 <div class="dm">
@@ -95,7 +95,20 @@
 
 <script>
     import '@/styles/chat.css';
+    import { mapState } from 'vuex';
     export default{
+        computed: {
+            ...mapState(['isShowError']),
+            containerStyle() {
+                return {
+                    backgroundcolor: this.isShowError ? 'black' : 'none',
+                    backgroundImage: this.isShowError ? 'url(@/assets/images/eyes3.gif)' : 'none',
+                    backgroundAttachment: this.isShowError ? 'none' : 'fixed',
+                    backgroundSize: this.isShowError ? 'none' : 'contain',
+                    backgroundPosition: this.isShowError ? 'none' : 'center',
+                };
+            }
+        }
     }
 </script>
 

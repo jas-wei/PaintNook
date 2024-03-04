@@ -18,7 +18,7 @@
       return {
         title: 'Login Form',
         security: '',
-        securityAnswer: 'c',
+        securityAnswer: 'icecream',
         message: ''
       };
     },

@@ -8,13 +8,14 @@ html{
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.container{
+.errorContainer{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     height: 90vh;
     margin: 0;
+    z-index: 1200;
 }
 
 h1{

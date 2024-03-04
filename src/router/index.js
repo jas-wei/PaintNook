@@ -9,9 +9,9 @@ const routes = [
     // redirect: '/login' // Redirect root path to the login page
   },
   {
-    path: '/creepylogin',
-    name: 'CreepyLoginForm',
-    component: () => import('@/components/CreepyLoginForm.vue') // Lazy-loaded component for the login page
+    path: '/login',
+    name: 'LoginForm',
+    component: () => import('@/components/LoginForm.vue') // Lazy-loaded component for the login page
   },
   {
     path: '/paintnook',
@@ -22,7 +22,7 @@ const routes = [
     }
   },
   {
-    path: '/error',
+    path: '/quiz',
     name: 'PageError',
     component: () => import('@/components/PageError.vue'), // Lazy-loaded component for the login page
     meta: {
@@ -51,7 +51,7 @@ router.beforeEach((to, from, next) => {
   const isAuthenticated = store.getters['isAuthenticated'];
   if (to.meta.requiresAuth && !isAuthenticated) {
     // Redirect to the login page if the route requires authentication and the user is not authenticated
-    next('/creepylogin');
+    next('/login');
   } else {
     // Proceed to the next route
     next();

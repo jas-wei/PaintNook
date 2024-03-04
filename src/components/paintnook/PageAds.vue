@@ -1,13 +1,10 @@
 <template>
     <div class="ad-flex">
         <img class="img1" src="../../assets/images/clothing.png">
-        <!-- 
-        <router-link :to="{ name: 'PageError' }">
+
+        <router-link :to="{ name: 'PageError' }" @click="toggleError">
             <img class="img1" src="@/assets/images/quiz.png">
         </router-link>
-        -->
-        <img class="img1" src="@/assets/images/quiz.png" @click="toggleError">
-
     </div>
 </template>
 

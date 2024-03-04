@@ -20,7 +20,7 @@ export default new Vuex.Store({
       state.isAuthenticated = authenticated
     },
     toggleShowError(state) {
-      state.isShowError = !state.isShowError
+      state.isShowError = true;
     }
   },
   actions: {
