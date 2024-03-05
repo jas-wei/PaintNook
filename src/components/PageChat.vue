@@ -1,6 +1,6 @@
 <template>
 
-    <div class="friend-flex">
+    <div class="friend-flex" :style="friendStyle">
         <h1>Friends</h1>
         <img class="profile-pic" src="#">
         <h2>miko_solangelo</h2>
@@ -80,7 +80,7 @@
                 </div>
                 <div class="dm">
                     <h2>miko_solangelo</h2>
-                    <p>We GOTTA meet up in person sometime</p>
+                    <p>{{change}}</p>
                 </div>
                 <div class="dm">
                     <h2>dakovinci</h2>
@@ -101,14 +101,22 @@
             ...mapState(['isShowError']),
             containerStyle() {
                 return {
-                    backgroundcolor: this.isShowError ? 'black' : 'none',
-                    backgroundImage: this.isShowError ? 'url(@/assets/images/eyes3.gif)' : 'none',
-                    backgroundAttachment: this.isShowError ? 'none' : 'fixed',
-                    backgroundSize: this.isShowError ? 'none' : 'contain',
-                    backgroundPosition: this.isShowError ? 'none' : 'center',
+                    backgroundColor: this.isShowError ? 'black' : 'none',
+                    backgroundImage: this.isShowError ? `url(${require('@/assets/images/eyes3.gif')})` : 'none',
+                    backgroundAttachment: this.isShowError ? 'fixed' : 'none',
+                    backgroundSize: this.isShowError ? 'contain' : 'none',
+                    backgroundPosition: this.isShowError ? 'center' : 'none',
                 };
-            }
-        }
+            },
+            friendStyle() {
+                return {
+                    position: this.isShowError ? 'none' : 'fixed',
+                };
+            },
+            change(){
+                return this.isShowError ? '-..-. -..-. --... ....-' : 'We GOTTA meet up in person sometime';
+            } 
+        },
     }
 </script>
 

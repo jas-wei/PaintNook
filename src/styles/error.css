@@ -15,7 +15,7 @@ html{
     flex-direction: column;
     height: 90vh;
     margin: 0;
-    z-index: 1200;
+    z-index: 100%;    
 }
 
 h1{
