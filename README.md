@@ -1,24 +1,6 @@
-# my-vuex-project
+If you want to play the ARG game in its entirety, here is the starting image to work off of!
+![IMG_4324](https://github.com/user-attachments/assets/d0c60349-ceae-45ca-bf74-af6c7776dfdb)
 
-## Project setup
-```
-npm install
-```
+!!SPOILERS AND ANSWER KEY BELOW!!
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+1. entering the username and password into the 
